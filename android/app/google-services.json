@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "18569998394",
+    "project_id": "app-be149",
+    "storage_bucket": "app-be149.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:18569998394:android:daf6269cc31bed421cc503",
+        "android_client_info": {
+          "package_name": "com.example.gp91"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwRRYwnFGcg9_oW2MRgkmPGC9fRnslfc0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
