@@ -15,47 +15,64 @@ class Body extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Background(
-      // child: SingleChildScrollView(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          const Text(
-            "Welcome Back!",
-            style: TextStyle(
-                fontSize: 20,
-                fontFamily: 'NanumGothic',
-                fontWeight: FontWeight.bold,
-                color: primaryColor),
-          ),
-          SizedBox(height: size.height * 0.03),
-          Image.asset(
-            "assets/images/logo_no_bkg.png",
-            width: size.width,
-            height: size.height * 0.3,
-          ),
-          RoundedInputField(
-            hintText: "Your Email",
-            onChanged: (value) {},
-          ),
-          RoundedPasswordField(
-            onChanged: (value) {},
-          ),
-          SizedBox(
-            height: size.height * 0.01,
-          ),
-          RoundedButton(
-            text: "LOGIN",
-            press: () {},
-          ),
-          SizedBox(
-            height: size.height * 0.03,
-          ),
-          AlreadyHaveAnAcoountCheck(
-            press: () {},
-          ),
-        ],
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            SizedBox(
+              height: size.height * 0.12,
+            ),
+            const Text(
+              "Welcome Back!",
+              style: TextStyle(
+                  fontSize: 20,
+                  fontFamily: 'NanumGothic',
+                  fontWeight: FontWeight.bold,
+                  color: primaryColor),
+            ),
+            SizedBox(height: size.height * 0.03),
+            Image.asset(
+              "assets/images/logo_no_bkg.png",
+              width: size.width,
+              height: size.height * 0.3,
+            ),
+            RoundedInputField(
+              hintText: "Your Email",
+              onChanged: (value) {},
+            ),
+            RoundedPasswordField(
+              onChanged: (value) {},
+            ),
+            const Align(
+              alignment: Alignment.centerRight,
+              child: Padding(
+                padding: EdgeInsets.only(right: 55),
+                child: Text(
+                  "Forgot Password?",
+                  style: TextStyle(
+                    color: primaryColor,
+                    fontFamily: 'NanumGothic',
+                    // fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: size.height * 0.01,
+            ),
+            RoundedButton(
+              text: "LOGIN",
+              press: () {},
+            ),
+            SizedBox(
+              height: size.height * 0.03,
+            ),
+            AlreadyHaveAnAcoountCheck(
+              press: () {},
+            ),
+          ],
+        ),
       ),
     );
-    // );
   }
 }
