@@ -18,6 +18,7 @@ class RoundedInputField extends StatelessWidget {
     return TextFieldContainer(
       child: TextField(
         onChanged: onChanged,
+        keyboardType: TextInputType.emailAddress,
         decoration: InputDecoration(
           hintStyle: const TextStyle(
             fontFamily: 'NanumGothic',

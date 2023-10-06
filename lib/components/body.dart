@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:gp91/constants.dart';
 import 'package:gp91/login/login.dart';
 import 'package:gp91/login/components/rounded_button.dart';
+import 'package:gp91/signup/signup.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -65,13 +66,13 @@ class Body extends StatelessWidget {
                   },
                 ),
                 RoundedButton(
-                  text: "SIGNUP",
+                  text: "SIGN UP",
                   press: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (context) {
-                          return LoginScreen();
+                          return SignUpScreen();
                         },
                       ),
                     );

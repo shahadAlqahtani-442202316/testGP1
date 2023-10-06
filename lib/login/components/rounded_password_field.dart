@@ -3,22 +3,24 @@ import 'package:gp91/constants.dart';
 import 'package:gp91/login/components/text_field_container.dart';
 
 class RoundedPasswordField extends StatelessWidget {
+  final String hintText;
   final ValueChanged<String> onChanged;
   const RoundedPasswordField({
     super.key,
     required this.onChanged,
+    this.hintText = "Password",
   });
 
   @override
   Widget build(BuildContext context) {
-    return const TextFieldContainer(
+    return TextFieldContainer(
       child: TextField(
         obscureText: true,
         decoration: InputDecoration(
           hintStyle: TextStyle(
             fontFamily: 'NanumGothic',
           ),
-          hintText: "Password",
+          hintText: hintText,
           icon: Icon(
             Icons.lock,
             color: primaryColor,

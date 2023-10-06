@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:gp91/login/components/already_have_an_account_acheck.dart';
-import 'package:gp91/login/components/background.dart';
 import 'package:gp91/constants.dart';
+import 'package:gp91/login/components/already_have_an_account_acheck.dart';
 import 'package:gp91/login/components/rounded_button.dart';
 import 'package:gp91/login/components/rounded_input_field.dart';
 import 'package:gp91/login/components/rounded_password_field.dart';
-import 'package:gp91/signup/signup.dart';
+import 'package:gp91/login/login.dart';
+import 'package:gp91/signup/components/background.dart';
 
 class Body extends StatelessWidget {
-  const Body({
-    super.key,
-  });
+  final Widget child;
+  const Body({super.key, required this.child});
 
   @override
   Widget build(BuildContext context) {
@@ -20,11 +19,8 @@ class Body extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            SizedBox(
-              height: size.height * 0.1,
-            ),
             const Text(
-              "Welcome Back!",
+              "SIGN UP",
               style: TextStyle(
                 fontSize: 20,
                 fontFamily: 'NanumGothic',
@@ -32,51 +28,40 @@ class Body extends StatelessWidget {
                 color: primaryColor,
               ),
             ),
-            SizedBox(height: size.height * 0.03),
             Image.asset(
               "assets/images/logo_no_bkg.png",
               width: size.width,
               height: size.height * 0.3,
             ),
             RoundedInputField(
+              hintText: "Name",
+              onChanged: (value) {},
+            ),
+            RoundedInputField(
               hintText: "Email",
               onChanged: (value) {},
+              icon: Icons.email,
             ),
             RoundedPasswordField(
               onChanged: (value) {},
             ),
-            const Align(
-              alignment: Alignment.centerRight,
-              child: Padding(
-                padding: EdgeInsets.only(right: 55),
-                child: Text(
-                  "Forgot Password?",
-                  style: TextStyle(
-                    color: primaryColor,
-                    fontFamily: 'NanumGothic',
-                    // fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(
-              height: size.height * 0.01,
+            RoundedPasswordField(
+              onChanged: (value) {},
+              hintText: "Confirm Password",
             ),
             RoundedButton(
-              text: "LOGIN",
+              text: "SIGN UP",
               // Go to the home page
               press: () {},
             ),
-            SizedBox(
-              height: size.height * 0.03,
-            ),
             AlreadyHaveAnAcoountCheck(
+              login: false,
               press: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return SignUpScreen();
+                      return LoginScreen();
                     },
                   ),
                 );
