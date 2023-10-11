@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:get/get.dart';
 import 'package:gp91/constants.dart';
+import 'package:gp91/firebase_auth/user_repository/auth_repository.dart';
 import 'package:gp91/screens/welcome_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp().then((value) => Get.put(AuthRepository()));
   runApp(const MyApp());
 }
 
@@ -18,7 +20,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // Map<String, String> dataToSave = {'name': 'station1'};
     // FirebaseFirestore.instance.collection("Station").add(dataToSave);
-    return MaterialApp(
+    return GetMaterialApp(
 
         // IDK What's the point of this line.
         debugShowCheckedModeBanner: false,
