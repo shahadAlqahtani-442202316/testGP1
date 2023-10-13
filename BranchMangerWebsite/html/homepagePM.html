@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en"
+  style="background: url(&quot;../images/back4.png&quot;), rgba(255,255,255,0); background-size: 100%;">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../images/Logo.png">
+  <link rel="stylesheet" href="../styles/basic.css">
+  <link rel="stylesheet" href="..\styles\homepagePM.css">
+  <title>Home Page Branch Manger</title>
+</head>
+
+<body id="page-top" style="color: var(--bs-body-bg);background: none;">
+
+  <div id="wrapper">
+    <div class="d-flex flex-column" id="content-wrapper" style="background: none;">
+      <div id="content">
+        <div class="container-fluid">
+          <div class="d-sm-flex justify-content-between align-items-center mb-4"></div>
+
+          <div class="row">
+
+            <!-- Fuel type -->
+            <div class="col-lg-5 col-xl-4">
+              <div class="card shadow mb-4">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                  <h6 class="fs-4 fw-bold text-primary m-0"
+                    style="color:rgb(48,180,118);--bs-primary:#30b476;--bs-primary-rgb:48,180,118;"> Fuel Type</h6>
+                </div>
+                <div class="card-body">
+                  <div class="chart-area">
+                    <table class="area-chart">
+                      <tbody>
+                        <tr>
+                          <td style="--start:0.1;--end:0.5;"> 50 </td>
+                          <td style="--start:0.0;--end:0.2;"> 20 </td>
+                          <td style="--start:0.2;--end:0.4;"> 40 </td>
+                        </tr>
+                        <tr>
+                          <td style="--start:0.5;--end:0.8;"> 80 </td>
+                          <td style="--start:0.2;--end:0.5;"> 50 </td>
+                          <td style="--start:0.4;--end:0.1;"> 10 </td>
+                        </tr>
+                        <tr>
+                          <td style="--start:0.8;--end:0.4;"> 40 </td>
+                          <td style="--start:0.5;--end:0.3;"> 30 </td>
+                          <td style="--start:0.1;--end:0.2;"> 20 </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div>
+                    <span class="me-2" style="color: rgb(133,135,150);">
+                      <svg height="100" width="60">
+                        <circle class="fas fa-circle text-success text-primary" cx="50" cy="50" r="10" fill="#1cc88a">
+                      </svg>
+                      91
+                    </span>
+                    <span class="me-2" style="color: rgb(133,135,150);">
+                      <svg height="100" width="60">
+                        <circle class="fas fa-circle text-danger text-success" cx="50" cy="50" r="10" fill="#e74a3b">
+                      </svg>
+                      95
+                    </span>
+                    <span class="me-2" style="color: rgb(133,135,150);">
+                      <svg height="100" width="60">
+                        <circle class="fas fa-circle text-dark-emphasis text-info" cx="50" cy="50" r="10"
+                          fill="rgb(133,135,150)">
+                      </svg>
+                      Diesel
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Fuel type -->
+
+            <!-- Services -->
+            <div class="col-lg-5 col-xl-4">
+              <div class="card shadow mb-4">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                  <h6 class="fs-4 fw-bold text-primary m-0"
+                    style="color:rgb(48,180,118);--bs-primary:#30b476;--bs-primary-rgb:48,180,118;"> Services</h6>
+                </div>
+                <div class="card-body">
+                  <ol class="Services">
+                    <li>
+                      <p>ATM</p>
+                    </li>
+                    <li>
+                      <p>Coffee</p>
+                    </li>
+                    <li>
+                      <p>Car wash</p>
+                    </li>
+                    <li>
+                      <p>Car mechanic</p>
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+            <!-- Services -->
+
+
+            <div class="col-md-6 col-xl-3 mb-4">
+              <!-- Fuel Status -->
+              <div class="card shadow border-start-info py-2" style="height:120.333px;width:270.333px;">
+                <div class="card-body">
+                  <div class="row align-items-center no-gutters">
+                    <div class="col-xl-12 me-2">
+                      <div class="text-uppercase fw-bold text-info text-xs mb-1"><span class="fs-4"
+                          style="--bs-primary:#30b476;--bs-primary-rgb:48,180,118;color:#30b476;"> Fuel Status </span>
+                      </div>
+                      <div class="row g-0 align-items-center">
+                        <div class="col-auto">
+                          <div class="fw-bold text-dark h5 mb-0 me-3"><span
+                              style="color: rgb(108, 110, 122);">100%</span></div>
+                        </div>
+                        <div class="col">
+                          <div class="progress progress-sm"
+                            style="--bs-primary:rgb(248,165,26);--bs-primary-rgb:248,165,26; height: 12px;">
+                            <div class="progress-bar bg-primary" aria-valuenow="50" aria-valuemin="0" aria-valuemax="1"
+                              style="width:100%;"><span class="visually-hidden">50%</span></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Fuel Status -->
+              <br>
+              <!-- open hour -->
+              <div class="card shadow border-start-info py-2" style="height:120.333px;width:270.333px;">
+                <div class="card-body">
+                  <div class="row align-items-center no-gutters">
+                    <div class="col-xl-12 me-2">
+                      <div class="text-uppercase fw-bold text-info text-xs mb-1"><span class="fs-4"
+                          style="--bs-primary:#30b476;--bs-primary-rgb:48,180,118;color:#30b476;">hour</span>
+                        <img src="..\images\openHour.png" style="float: right;">
+                      </div>
+                      <div class="row g-0 align-items-center">
+                        <div class="col-auto">
+                          <div class="fw-bold text-dark h5 mb-0 me-3">
+                            <span style="color: rgb(108, 110, 122);">5:00 AM</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- open hour -->
+              <br>
+              <!-- close hour -->
+              <div class="card shadow border-start-info py-2" style="height:120.333px;width:270.333px;">
+                <div class="card-body">
+                  <div class="row align-items-center no-gutters">
+                    <div class="col-xl-12 me-2">
+                      <div class="text-uppercase fw-bold text-info text-xs mb-1"><span class="fs-4"
+                          style="--bs-primary:#30b476;--bs-primary-rgb:48,180,118;color:#30b476;">hour</span>
+                        <img src="..\images\closeHour.png" style="float: right;">
+                      </div>
+                      <div class="col-auto">
+                        <div class="fw-bold text-dark h5 mb-0 me-3">
+                          <span style="color: rgb(108, 110, 122);">4:00 AM</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- close hour -->
+            </div>
+
+
+          </div>
+
+          <div class="row">
+
+            <!-- Visitors -->
+            <div class="col-lg-7 col-xl-8" style="width: 1550px;">
+              <div class="card shadow mb-4">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                  <h6 class="fs-4 text-primary fw-bold m-0" style="--bs-primary: #30b476;--bs-primary-rgb: 48,180,118;">
+                    Visitors</h6>
+                </div>
+                <div class="card-body" style="height: 250px;">
+                  <div class="simple-bar-chart">
+
+                    <div class="item" style="--clr: #5EB344; --val: 80">
+                      <div class="label" style="font-size: 1.0rem;">Jan</div>
+                      <div class="value">80%</div>
+                    </div>
+
+                    <div class="item" style="--clr: #FCB72A; --val: 50">
+                      <div class="label" style="font-size: 1.0rem;">Feb</div>
+                      <div class="value">50%</div>
+                    </div>
+
+                    <div class="item" style="--clr: #F8821A; --val: 100">
+                      <div class="label" style="font-size: 1.0rem;">Mar</div>
+                      <div class="value">100%</div>
+                    </div>
+
+                    <div class="item" style="--clr: #E0393E; --val: 15">
+                      <div class="label" style="font-size: 1.0rem;">Apr</div>
+                      <div class="value">15%</div>
+                    </div>
+
+                    <div class="item" style="--clr: #963D97; --val: 5">
+                      <div class="label" style="font-size: 1.0rem;">May</div>
+                      <div class="value">5%</div>
+                    </div>
+
+                    <div class="item" style="--clr: #069CDB; --val: 90">
+                      <div class="label" style="font-size: 1.0rem;">Jun</div>
+                      <div class="value">90%</div>
+                    </div>
+
+                    <div class="item" style="--clr: #d706db; --val: 50">
+                      <div class="label" style="font-size: 1.0rem;">Jul</div>
+                      <div class="value">50%</div>
+                    </div>
+
+                    <div class="item" style="--clr: #068e51; --val: 25">
+                      <div class="label" style="font-size: 1.0rem;">Aug</div>
+                      <div class="value">25%</div>
+                    </div>
+
+                    <div class="item" style="--clr: #db5106; --val: 70">
+                      <div class="label" style="font-size: 1.0rem;">Sep</div>
+                      <div class="value">70%</div>
+                    </div>
+
+                    <div class="item" style="--clr: #e67190; --val: 30">
+                      <div class="label" style="font-size: 1.0rem;">Oct</div>
+                      <div class="value">30%</div>
+                    </div>
+
+                    <div class="item" style="--clr: #9b06db; --val: 50">
+                      <div class="label" style="font-size: 1.0rem;">Nov</div>
+                      <div class="value">50%</div>
+                    </div>
+
+                    <div class="item" style="--clr: #0e87af; --val: 40">
+                      <div class="label" style="font-size: 1.0rem;">Dec</div>
+                      <div class="value">40%</div>
+                    </div>
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <!-- Visitors -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- star footer -->
+  <footer class="footer">
+    <ul class="social-icon">
+      <li class="social-icon__item"><a class="social-icon__link" href="#">
+          <ion-icon name="logo-twitter"></ion-icon>
+        </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="#">
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="#">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a></li>
+    </ul>
+
+    <p>&copy;2023 All Rights Reserved For 91.com</p>
+  </footer>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <!-- end footer -->
+</body>
+
+</html>
