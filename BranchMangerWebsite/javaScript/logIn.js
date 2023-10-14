@@ -46,7 +46,7 @@ async function checkEmailExists(email) {
             const branchManagerId = branchManagerRef.id;
 
             // add to station collection
-            const stationRef = await addDoc(collection(db, "station"), {
+            const stationRef = await addDoc(collection(db, "Station"), {
                 name: stationName,
                 Location: stationLocation,
                 branch_manager_id: branchManagerId, // Store the foreign key

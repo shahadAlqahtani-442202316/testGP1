@@ -1,122 +1,216 @@
 <!DOCTYPE html>
-<html data-bs-theme="light" lang="en" data-bss-forced-theme="light" style="background:url(&quot;../images/back4.png&quot;), rgba(255,255,255,0); background-size: 100%;">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <link rel="icon" href="../images/Logo.png">
-    <link rel="stylesheet" href="../styles/basic.css">
-    <link rel="stylesheet" href="../styles/edit.css">
-    <title>Edit Page</title>
+<html data-bs-theme="light" lang="en" data-bss-forced-theme="light"
+  style="background:url(&quot;../images/back4.png&quot;), rgba(255,255,255,0); background-size: 100%;">
 
-    <!-- Include the Firebase script -->
-    <script type="module" src="..\javaScript\edit.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <link rel="icon" href="../images/Logo.png">
+  <link rel="stylesheet" href="../styles/basic.css">
+  <link rel="stylesheet" href="../styles/edit.css">
+  <title>Edit Page</title>
+
+  <style>
+    .custom-file-input {
+      display: none;
+    }
+
+    .custom-file-label {
+      background-color: rgba(248, 167, 26, 0.614);
+      color: #fff;
+      font-weight: bold;
+      padding: 10px 20px;
+      width: 100%;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      display: inline-block;
+    }
+  </style>
+
+  <!-- Include the Firebase script -->
+  <script type="module" src="..\javaScript\edit.js"></script>
 </head>
 
 
-  <body class="bg-gradient-primary" style="color:var(--bs-body-bg);background:rgba(255,255,255,0);">
-    
-    <!-- start form -->
-    <div class="container" style="background:rgba(255,255,255,0);">
-        <div class="card border-0 shadow-lg o-hidden my-5" style="border-radius:30px;">
-            <div class="card-body p-0" style="border-radius:0px;">
-                <div class="row">
-                    <div class="col-lg-5 d-none d-lg-flex"><img src="..\images\editPhoto.png" width="450" height="685"></div>
-                    <div class="col-lg-7" style="border-radius:0px;">
-                        <div class="p-5" style="border-style:none;border-radius:0px;">
-                            <div class="text-center">
-                                <h3 class="text-uppercase fw-semibold text-dark mb-4" style="font-family:Roboto, sans-serif;font-weight:bold;"><span style="color:rgb(248, 165, 26);"><span style="color: rgb(48, 180, 118);">Edit your gas station</span></span></h3>
-                            </div>
-                            <form class="user" id="editStation">
-                                <div>
-                                    <div class="row">
-                                        <div class="col"><input class="form-control form-control form-control-user" type="text" id="StationName" name="station_name" placeholder="Station Name" style="margin: 5px; font-size: 18px;" readonly></div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="row">
-                                        <div class="col"><input class="form-control form-control form-control-user" type="url" id="StationLocation" name="station_location" placeholder="Station Location" style="margin: 5px; font-size: 18px;" readonly></div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="row">
-                                      <label class="label">Open hour</label>
-                                        <div class="col"><input class="form-control form-control form-control-user" type="time" id="OpenHour" style="margin: 5px; font-size: 18px;" name="open_hour" required></div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="row">
-                                      <label class="label">Close hour</label>
-                                        <div class="col"><input class="form-control form-control form-control-user" type="time" id="CloseHour" name="close_hour" style="margin: 5px; font-size: 18px;" required></div>
-                                    </div>
-                                </div>
-                                <div>
-                                  <div class="row">
-                                    <label class="label">Fuel type</label>
-                                    <div class="col" style="margin: 5px; font-size: 18px;" id="fuelType">
-                                        <label class="form-check-label" for="fuelType91" style="color: rgb(28, 200, 138); font-weight: 700;">
-                                          <input class="form-check-input" type="checkbox" id="fuelType91" name="fuelType" value="91" style="margin: 5px">
-                                          91
-                                        </label>
-                                        
-                                        <label class="form-check-label" for="fuelType95" style="color: rgb(231,74,59); font-weight: 700;">
-                                          <input class="form-check-input" type="checkbox" id="fuelType95" name="fuelType" value="95" style="margin: 5px">
-                                          95
-                                        </label>
-                                        
-                                        <label class="form-check-label" for="fuelTypeDiesel" style="color: rgb(133,135,150); font-weight: 700;">
-                                          <input class="form-check-input" type="checkbox" id="fuelTypeDiesel" name="fuelType" value="Diesel" style="margin: 5px">
-                                          Diesel
-                                        </label>
-                                    </div>
-                                </div>
-                                </div>
-                                <div>
-                                  <div class="row">
-                                    <label class="label">Fuel status</label>
-                                    <div class="col" style="margin: 5px;" id="fuelState">
+<body class="bg-gradient-primary" style="color:var(--bs-body-bg);background:rgba(255,255,255,0);">
 
-                                        <label class="form-check-label" for="fuelStateAvailable">
-                                          <input class="form-check-input" type="radio" id="fuelStateAvailable" name="fuelState" value="Available">
-                                           Available
-                                        </label>
-
-                                        <label class="form-check-label" for="fuelStateUnavailable">
-                                          <input class="form-check-input" type="radio" id="fuelStateUnavailable" name="fuelState" value="Unavailable">
-                                          Unavailable
-                                        </label>
-                                    </div>
-                                </div>
-                                </div>
-                                <button class="btn btn-primary d-block btn-user w-100" type="submit" style="border-radius: 160px;background: rgba(48,180,118,0.52);border-color: rgba(48,180,118,0.52);margin: 15px; font-weight: bold;">SAVE</button>
-                            </form>
-                        </div>
-                    </div>
+  <!-- start form -->
+  <div class="container" style="background:rgba(255,255,255,0); width: 1200px;">
+    <div class="card border-0 shadow-lg o-hidden my-5" style="border-radius:30px;" id="heightBox">
+      <div class="card-body p-0" style="border-radius:0px;">
+        <div class="row">
+          <div class="col-lg-5 d-none d-lg-flex"><img src="..\images\editPhoto.png" width="460" height="780"
+              id="BKimage"></div>
+          <div class="col-lg-7" style="border-radius:0px;">
+            <div class="p-5" style="border-style:none;border-radius:0px;">
+              <div class="text-center">
+                <h3 class="text-uppercase fw-semibold text-dark mb-4"
+                  style="font-family:Roboto, sans-serif;font-weight:bold;"><span style="color:rgb(248, 165, 26);"><span
+                      style="color: rgb(48, 180, 118);">Edit your gas station</span></span></h3>
+              </div>
+              <form class="user" id="editStation">
+                <div>
+                  <div class="row">
+                    <div class="col"><input class="form-control form-control form-control-user" type="text"
+                        id="StationName" name="station_name" placeholder="Station Name"
+                        style="margin: 5px; font-size: 18px;" readonly></div>
+                  </div>
                 </div>
+                <div>
+                  <div class="row">
+                    <div class="col"><input class="form-control form-control form-control-user" type="url"
+                        id="StationLocation" name="station_location" placeholder="Station Location"
+                        style="margin: 5px; font-size: 18px;" readonly></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="row">
+                    <label class="label">Open hour</label>
+                    <div class="col"><input class="form-control form-control form-control-user" type="time"
+                        id="OpenHour" style="margin: 5px; font-size: 18px;" name="open_hour" required></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="row">
+                    <label class="label">Close hour</label>
+                    <div class="col"><input class="form-control form-control form-control-user" type="time"
+                        id="CloseHour" name="close_hour" style="margin: 5px; font-size: 18px;" required></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="row">
+                    <label class="label">Station image</label>
+                    <div class="col">
+                        <label for="imageUpload" class="custom-file-label" id="imageLabel">Choose file in JPG format</label>
+                        <input type="file" id="imageUpload" name="stationImage1" class="custom-file-input" accept=".JPG">
+                    </div>
+                </div>                
+                  <div>
+                    <div class="row">
+                      <label class="label">Fuel type</label>
+                      <div class="col" style="margin: 5px; font-size: 18px;">
+                        <label class="form-check-label" for="fuelType91"
+                          style="color: rgb(28, 200, 138); font-weight: 700;">
+                          <input class="form-check-input" type="checkbox" id="fuelType91" name="fuelType" value="91"
+                            style="margin: 5px">
+                          91
+                        </label>
+                      </div>
+                    </div>
+                    <div id="91State" style="display: none;">
+                      <div class="row">
+                        <label class="label">91 status</label>
+                        <div class="col" style="margin: 5px;" id="fuelState">
+                          <label class="form-check-label" for="fuelStateAvailable91">
+                            <input class="form-check-input" type="radio" id="fuelStateAvailable91" name="fuelState91"
+                              value="Available">
+                            Available
+                          </label>
+
+                          <label class="form-check-label" for="fuelStateUnavailable91">
+                            <input class="form-check-input" type="radio" id="fuelStateUnavailable91" name="fuelState91"
+                              value="Unavailable">
+                            Unavailable
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col" style="margin: 5px; font-size: 18px;">
+                        <label class="form-check-label" for="fuelType95"
+                          style="color: rgb(231, 74, 59); font-weight: 700;">
+                          <input class="form-check-input" type="checkbox" id="fuelType95" name="fuelType" value="95"
+                            style="margin: 5px">
+                          95
+                        </label>
+                      </div>
+                    </div>
+                    <div id="95State" style="display: none;">
+                      <div class="row">
+                        <label class="label">95 status</label>
+                        <div class="col" style="margin: 5px;" id="fuelState">
+                          <label class="form-check-label" for="fuelStateAvailable95">
+                            <input class="form-check-input" type="radio" id="fuelStateAvailable95" name="fuelState95"
+                              value="Available">
+                            Available
+                          </label>
+
+                          <label class="form-check-label" for="fuelStateUnavailable95">
+                            <input class="form-check-input" type="radio" id="fuelStateUnavailable95" name="fuelState95"
+                              value="Unavailable">
+                            Unavailable
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col" style="margin: 5px; font-size: 18px;">
+                        <label class="form-check-label" for="fuelTypeDiesel"
+                          style="color: rgb(133, 135, 150); font-weight: 700;">
+                          <input class="form-check-input" type="checkbox" id="fuelTypeDiesel" name="fuelType"
+                            value="Diesel" style="margin: 5px">
+                          Diesel
+                        </label>
+                      </div>
+                    </div>
+                    <div id="dieselState" style="display: none;">
+                      <div class="row">
+                        <label class="label">Diesel status</label>
+                        <div class="col" style="margin: 5px;" id="fuelState">
+                          <label class="form-check-label" for="fuelStateAvailableDiesel">
+                            <input class="form-check-input" type="radio" id="fuelStateAvailableDiesel"
+                              name="fuelStateDiesel" value="Available">
+                            Available
+                          </label>
+
+                          <label class="form-check-label" for="fuelStateUnavailableDiesel">
+                            <input class="form-check-input" type="radio" id="fuelStateUnavailableDiesel"
+                              name="fuelStateDiesel" value="Unavailable">
+                            Unavailable
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="text-center">
+                  <button class="btn btn-primary d-block btn-user w-100" type="submit"
+                    style="border-radius: 160px;background: rgba(48,180,118,0.52);border-color: rgba(48,180,118,0.52);margin: 15px; font-weight: bold; width: 100;">SAVE</button>
+                </div>
+              </form>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-   <!-- end form -->
+  </div>
+  <!-- end form -->
 
-<!-- start footer -->
-    <footer class="footer">
-        <ul class="social-icon">
-          <li class="social-icon__item"><a class="social-icon__link" href="#">
-              <ion-icon name="logo-twitter"></ion-icon>
-            </a></li>
-          <li class="social-icon__item"><a class="social-icon__link" href="#">
-              <ion-icon name="logo-linkedin"></ion-icon>
-            </a></li>
-          <li class="social-icon__item"><a class="social-icon__link" href="#">
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a></li>
-        </ul>
+  <!-- start footer -->
+  <footer class="footer">
+    <ul class="social-icon">
+      <li class="social-icon__item"><a class="social-icon__link" href="#">
+          <ion-icon name="logo-twitter"></ion-icon>
+        </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="#">
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="#">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a></li>
+    </ul>
 
-        <p>&copy;2023 All Rights Reserved For 91.com</p>
-      </footer>
+    <p>&copy;2023 All Rights Reserved For 91.com</p>
+  </footer>
 
-      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
- <!-- end footer -->
-   
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <!-- end footer -->
+
 </body>
+
 </html>
