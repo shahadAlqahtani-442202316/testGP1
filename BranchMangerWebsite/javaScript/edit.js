@@ -80,9 +80,8 @@ function populateCheckBoxesAndRadioButtons(stationData) {
     // Loop through radio button elements and set their checked status based on the data
     fuelStatus.forEach((status) => {
         const [type, state] = status.split(" ");
-        const radioButton = document.getElementById(`fuelState${type}${state}`);
+        const radioButton = document.getElementById(`${type}${state}`);
         if (radioButton) {
-            radioButton.style.display = 'block';
             radioButton.checked = true;
         }
     });
