@@ -12,6 +12,7 @@ import 'package:gp91/login/components/already_have_an_account_acheck.dart';
 import 'package:gp91/login/components/rounded_button.dart';
 import 'package:gp91/login/components/text_field_container.dart';
 import 'package:gp91/login/login.dart';
+import 'package:gp91/logout.dart';
 import 'package:gp91/signup/components/background.dart';
 
 class Body extends StatefulWidget {
@@ -214,6 +215,8 @@ class _FormScreenState extends State<Body> {
                     //     _passwordController.text.trim());
                     // createUser(user);
                     // _signUp(user);
+                    _signUpController.registerUser(_emailController.text.trim(),
+                        _passwordController.text.trim());
                     _signUpController.createUser(user);
                   } else {
                     print("validation did not work");
@@ -223,14 +226,15 @@ class _FormScreenState extends State<Body> {
               AlreadyHaveAnAcoountCheck(
                 login: false,
                 press: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return LoginScreen();
-                      },
-                    ),
-                  );
+                  Get.to(() => LoginScreen());
+                  // Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(
+                  //     builder: (context) {
+                  //       return LoginScreen();
+                  //     },
+                  //   ),
+                  // );
                 },
               ),
             ],
@@ -254,6 +258,15 @@ class _FormScreenState extends State<Body> {
         await _authRepository.createUserWithEmailAndPassword(email, password);
     if (user != null) {
       print("User is successfully created");
+      showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            content: Text("successfully signed up"),
+          );
+        },
+      );
+      Get.to(() => Logout());
       // Navigator.pushNamed(context, "/home");
     } else {
       print("User created failed");

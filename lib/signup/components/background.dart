@@ -33,6 +33,11 @@ class Background extends StatelessWidget {
             ),
           ),
           child,
+          const Positioned(
+            top: 30,
+            left: 30,
+            child: BackButton(),
+          ),
         ],
       ),
     );

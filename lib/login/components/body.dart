@@ -1,11 +1,15 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:gp91/firebase_auth/firebase_auth_services.dart';
+import 'package:gp91/firebase_auth/user_repository/auth_repository.dart';
 import 'package:gp91/login/components/already_have_an_account_acheck.dart';
 import 'package:gp91/login/components/background.dart';
 import 'package:gp91/constants.dart';
 import 'package:gp91/login/components/rounded_button.dart';
 import 'package:gp91/login/components/text_field_container.dart';
+import 'package:gp91/login/forgot_password/forgot_password_mail.dart';
+import 'package:gp91/logout.dart';
 import 'package:gp91/signup/signup.dart';
 
 // from StatelessWidget to stateful
@@ -20,7 +24,7 @@ class Body extends StatefulWidget {
 
 class _FormScreenState extends State<Body> {
   final _formKey = GlobalKey<FormState>();
-  final FirebaseAuthService _auth = FirebaseAuthService();
+  final AuthRepository _auth = AuthRepository();
   final TextEditingController _emailController = TextEditingController();
 
   final TextEditingController _passwordController = TextEditingController();
@@ -127,12 +131,13 @@ class _FormScreenState extends State<Body> {
               ),
 
               Container(
-                margin: const EdgeInsets.only(
-                    right: 30), // Adjust the margin as needed
+                margin: const EdgeInsets.only(right: 30),
                 child: Align(
                   alignment: Alignment.centerRight,
                   child: TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.to(() => ForgotPasswordMailScreen());
+                    },
                     child: const Text(
                       "Forgot Password?",
                       style: TextStyle(
@@ -165,14 +170,15 @@ class _FormScreenState extends State<Body> {
               ),
               AlreadyHaveAnAcoountCheck(
                 press: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return SignUpScreen();
-                      },
-                    ),
-                  );
+                  Get.to(() => SignUpScreen());
+                  // Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(
+                  //     builder: (context) {
+                  //       return SignUpScreen();
+                  //     },
+                  //   ),
+                  // );
                 },
               ),
             ],
@@ -186,13 +192,38 @@ class _FormScreenState extends State<Body> {
     String email = _emailController.text;
     String password = _passwordController.text;
 
+    showDialog(
+      context: context,
+      builder: (context) {
+        return const Center(child: CircularProgressIndicator());
+      },
+    );
+
     User? user = await _auth.signInWithEmailAndPassword(email, password);
+
+    // Navigator.of(context).pop();
+    Get.back();
 
     if (user != null) {
       print("User is successfully logined");
+      Get.to(() => Logout());
       // Navigator.pushNamed(context, "/home");
     } else {
       print("User lodined failed");
+      // Navigator.of(context).pop();
+      Get.back();
+      // showDialog(
+      //   context: context,
+      //   builder: (context) {
+      //     return const CustomSnackBarContent(
+      //       errorTitle: "Oops!",
+      //       errorBody:
+      //           "It seems like there's no account associated with this email address. Please double-check your email or sign up to create a new account",
+      //       snackBarcolor: Color(0xffB00020),
+      //       iconColor: Color(0xff801336),
+      //     );
+      //   },
+      // );
     }
   }
 }

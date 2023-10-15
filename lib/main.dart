@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
 import 'package:gp91/constants.dart';
 import 'package:gp91/firebase_auth/user_repository/auth_repository.dart';
+import 'package:gp91/on_boarding/on_boarding_screen.dart';
 import 'package:gp91/screens/welcome_screen.dart';
 
 void main() async {
@@ -21,15 +22,18 @@ class MyApp extends StatelessWidget {
     // Map<String, String> dataToSave = {'name': 'station1'};
     // FirebaseFirestore.instance.collection("Station").add(dataToSave);
     return GetMaterialApp(
+      
+      // IDK What's the point of this line.
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Auth',
 
-        // IDK What's the point of this line.
-        debugShowCheckedModeBanner: false,
-        title: 'Flutter Auth',
-        theme: ThemeData(
-          // primaryColor: bkgPrimaryColor,
-          scaffoldBackgroundColor: Colors.white,
-        ),
-        home: WelcomeScreen());
+      theme: ThemeData(
+        // primaryColor: bkgPrimaryColor,
+        scaffoldBackgroundColor: Colors.white,
+      ),
+      //WelcomeScreen()
+      home: OnBoardingScreen(),
+    );
   }
 }
 

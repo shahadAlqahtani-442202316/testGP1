@@ -19,7 +19,7 @@ class UserRepository extends GetxController {
               backgroundColor: Colors.green.withOpacity(0.1),
               colorText: Colors.green),
         )
-        .catchError((error, stackTrace) {
+        .catchError((error, stackTrace){
       print("Something went wrong in create user database");
       Get.snackbar("Error", "Something went wrong, try again",
           snackPosition: SnackPosition.BOTTOM,

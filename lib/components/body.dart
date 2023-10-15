@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 // import 'package:gp91/components/background.dart';
 import 'package:gp91/constants.dart';
 import 'package:gp91/login/login.dart';
@@ -55,27 +56,29 @@ class Body extends StatelessWidget {
                 RoundedButton(
                   text: "LOGIN",
                   press: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return LoginScreen();
-                        },
-                      ),
-                    );
+                    Get.to(() => LoginScreen());
+                    // Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(
+                    //     builder: (context) {
+                    //       return LoginScreen();
+                    //     },
+                    //   ),
+                    // );
                   },
                 ),
                 RoundedButton(
                   text: "SIGN UP",
                   press: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return SignUpScreen();
-                        },
-                      ),
-                    );
+                    Get.to(() => SignUpScreen());
+                    // Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(
+                    //     builder: (context) {
+                    //       return SignUpScreen();
+                    //     },
+                    //   ),
+                    // );
                   },
                 ),
               ],
