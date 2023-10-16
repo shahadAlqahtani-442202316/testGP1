@@ -25,7 +25,7 @@ const collectionName = "Station";
 const collectionRef = collection(db, collectionName);
 
 // Retrieve a specific document by ID ("s1") must tack id from BM fk ************************
-const documentPath = doc(collectionRef, "fZrKBr4GceRfpp6GPcPC");
+const documentPath = doc(collectionRef, "gnrYQk0cGN4G28DTEhJm");
 
 // Retrieve station data and populate form fields
 async function retrieveAndPopulateForm() {
@@ -35,23 +35,25 @@ async function retrieveAndPopulateForm() {
             // Access data for each document
             const stationData = docSnap.data();
 
-            // Populate form fields
             document.getElementById("StationName").value = stationData.name;
             document.getElementById("StationLocation").value = stationData.Location;
-            document.getElementById("OpenHour").value = stationData.open_hour;
-            document.getElementById("CloseHour").value = stationData.close_hour;
-            
-            // Update the label text to the selected file's name
-            const imageLabel = document.getElementById('imageLabel');
-            imageLabel.textContent = stationData.image_station;
-            
-            // Checkboxes and radio buttons can be populated here
-            populateCheckBoxesAndRadioButtons(stationData);
-
             document.getElementById("StationName").style.fontSize = "larger";
             document.getElementById("StationLocation").style.fontSize = "larger";
             document.getElementById("StationName").style.color = "#f8a71a98";
             document.getElementById("StationLocation").style.color = "#f8a71a98";
+
+            if(stationData.open_hour != null)
+            document.getElementById("OpenHour").value = stationData.open_hour;
+
+            if(stationData.close_hour != null)
+            document.getElementById("CloseHour").value = stationData.close_hour;
+            
+            if(stationData.image_station != null)
+            document.getElementById('imageUpload').value = stationData.image_station;
+            
+            // Checkboxes and radio buttons can be populated here
+            populateCheckBoxesAndRadioButtons(stationData);
+
         } else {
             console.log("Document does not exist.");
         }
@@ -150,7 +152,7 @@ function toggleRadioGroup() {
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("editStation");
 
-    form.addEventListener("submit", function (event) {
+    form.addEventListener("submit", async function (event) {
         // Prevent the form from submitting in the traditional way
         event.preventDefault();
 
@@ -174,47 +176,20 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
 
-        // Check if an image has been selected
-        const imageUpload = document.getElementById("imageUpload");
-        if (imageUpload.files.length === 0) {
-            alert("Please select an image");
-            return; // Prevent form submission if a validation check fails
-        }
-
         // If all validation checks pass, you can proceed to update the Firestore document
         if (hasChecked) {
-            AddStation();
+            await AddStation();
+
+            window.location.href = "homepagePM.html";
         } else {
             alert("Please select at least one checkbox for each fuel type.");
         }
+
     });
 });
 
-
-// Add an event listener to the file input
-document.getElementById('imageUpload').addEventListener('change', function () {
-    const imageUpload = document.getElementById('imageUpload');
-    const imageLabel = document.getElementById('imageLabel');
-
-    if (imageUpload.files.length > 0) {
-        const allowedExtensions = /(\.JPG)$/i;
-        if (!allowedExtensions.exec(imageUpload.files[0].name)) {
-            // If the selected file doesn't have a .jpg extension, clear the input and show an alert.
-            imageUpload.value = '';
-            imageLabel.textContent = 'Choose file in JPG format';
-            alert('Please select an image in JPG format');
-        } else {
-            // Update the label text to the selected file's name
-            imageLabel.textContent = imageUpload.files[0].name;
-        }
-    } else {
-        // Reset the label text when no file is selected
-        imageLabel.textContent = 'Choose file in JPG format';
-    }
-});
-
 // set to station doc
-function AddStation() {
+async function AddStation() {
     const stationImage = document.getElementById("imageUpload").value;
     const OpenHour = document.getElementById("OpenHour").value;
     const CloseHour = document.getElementById("CloseHour").value;
@@ -241,14 +216,19 @@ function AddStation() {
     }
 
     // Define a reference to the Firestore collection id change based on PM fk *******************
-    const myCollection = doc(db, "Station", "fZrKBr4GceRfpp6GPcPC");
+    const myCollection = doc(db, "Station", "gnrYQk0cGN4G28DTEhJm");
 
     // Update the station with more information
-    updateDoc(myCollection, {
-        open_hour: OpenHour,
-        close_hour: CloseHour,
-        image_station: stationImage,
-        fuel_type: fuelTypeArray,
-        fuel_status: fuelStatevalue,
-    })
+    try {
+        await updateDoc(myCollection, {
+            open_hour: OpenHour,
+            close_hour: CloseHour,
+            image_station: stationImage,
+            fuel_type: fuelTypeArray,
+            fuel_status: fuelStatevalue,
+        });
+        console.log("Data successfully updated in Firestore.");
+    } catch (error) {
+        console.error("Error updating data in Firestore: ", error);
+    }
 }

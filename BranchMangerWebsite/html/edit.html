@@ -10,24 +10,6 @@
   <link rel="stylesheet" href="../styles/edit.css">
   <title>Edit Page</title>
 
-  <style>
-    .custom-file-input {
-      display: none;
-    }
-
-    .custom-file-label {
-      background-color: rgba(248, 167, 26, 0.614);
-      color: #fff;
-      font-weight: bold;
-      padding: 10px 20px;
-      width: 100%;
-      border: none;
-      border-radius: 20px;
-      cursor: pointer;
-      display: inline-block;
-    }
-  </style>
-
   <!-- Include the Firebase script -->
   <script type="module" src="..\javaScript\edit.js"></script>
 </head>
@@ -40,7 +22,7 @@
     <div class="card border-0 shadow-lg o-hidden my-5" style="border-radius:30px;" id="heightBox">
       <div class="card-body p-0" style="border-radius:0px;">
         <div class="row">
-          <div class="col-lg-5 d-none d-lg-flex"><img src="..\images\editPhoto.png" width="460" height="780"
+          <div class="col-lg-5 d-none d-lg-flex"><img src="..\images\editPhoto.png" width="460" height="783"
               id="BKimage"></div>
           <div class="col-lg-7" style="border-radius:0px;">
             <div class="p-5" style="border-style:none;border-radius:0px;">
@@ -82,8 +64,7 @@
                   <div class="row">
                     <label class="label">Station image</label>
                     <div class="col">
-                        <label for="imageUpload" class="custom-file-label" id="imageLabel">Choose file in JPG format</label>
-                        <input type="file" id="imageUpload" name="stationImage1" class="custom-file-input" accept=".JPG">
+                        <input type="url" id="imageUpload" name="stationImage1" class="form-control form-control form-control-user" placeholder="Station Image in URL format" accept="image/jpg" required style="font-size: 18px;">
                     </div>
                 </div>                
                   <div>
@@ -178,8 +159,8 @@
                   </div>
                 </div>
                 <div class="text-center">
-                  <button class="btn btn-primary d-block btn-user w-100" type="submit" style="border-radius: 160px;background: rgba(48,180,118,0.52);border-color: rgba(48,180,118,0.52);margin: 15px; font-weight: bold; width: 100;">
-                    <a href="homepagePM.html" style="text-decoration: none; color: white;">SAVE</a>
+                  <button class="btn btn-primary d-block btn-user w-100" type="submit" style="border-radius: 160px;background: rgba(48,180,118,0.52);border-color: rgba(48,180,118,0.52);margin: 15px; font-weight: bold; width: 100; color: white; text-decoration: none;">
+                   SAVE
                   </button>
                 </div>
               </form>
