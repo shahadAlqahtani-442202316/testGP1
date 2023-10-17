@@ -1,53 +1,3 @@
-
-  /* Google fonts */
-  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
-
-  /*---------------------------footer-----------------------------------*/
-  .footer {
-    position: relative;
-    width: 100%;
-    background: #83c4a197;
-    min-height: 100px;
-    padding: 20px 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-
-  .social-icon{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 10px 0;
-    flex-wrap: wrap;
-  }
-
-  .social-icon__item{
-  list-style: none;
-}
-
-.social-icon__link {
-  font-size: 2rem;
-  color: #fff;
-  margin: 0 10px;
-  display: inline-block;
-  transition: 0.5s;
-}
-.social-icon__link:hover {
-  transform: translateY(-10px);
-}
-
-.footer p {
-  color: #fff;
-  margin: 15px 0 10px 0;
-  font-size: 1rem;
-  font-weight: 300;
-}
- /*---------------------------footer-----------------------------------*/
-
-/*header*/
 :root,
 [data-bs-theme="light"] {
   --bs-success: #53b799;
@@ -94,8 +44,8 @@
   z-index: 9999;
   display: block;
   position: relative;
-  color: #83c4a197;
-  background: #83c4a197;
+  color: #333;
+  background: #fff;
   border: 1px solid #ccc;
   border-bottom-color: #bbb;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -286,6 +236,36 @@
 }
 .portfolio-block.cv .group .item {
   border-bottom: 1px solid var(--bs-dark-bg-subtle);
+}
+.card-body {
+  background-color: #dcfee3;
+}
+.btn-outline-primary {
+  --bs-btn-color: #00000;
+  --bs-btn-border-color: #2cb673;
+  --bs-btn-hover-color: #00000;
+  --bs-btn-hover-bg: #2cb673;
+  --bs-btn-hover-border-color: #2cb673;
+  --bs-btn-focus-shadow-rgb: 14, 160, 255;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #dcfee3;
+  --bs-btn-active-border-color: #0ea0ff;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #0ea0ff;
+  --bs-btn-disabled-bg: transparent;
+  --bs-btn-disabled-border-color: #0ea0ff;
+  --bs-gradient: none;
+}
+.special-skill-item .icon {
+  text-align: center;
+  font-size: 50px;
+  background-color: #2cb673;
+  color: #fff;
+  height: 70px;
+  width: 70px;
+  line-height: 69px;
+  display: inline-block;
+  border-radius: 50%;
 }
 .gradient {
   background: linear-gradient(1deg, #2cb673, #dcfee3);
