@@ -95,10 +95,10 @@ function populateCheckBoxesAndRadioButtons(stationData) {
         document.getElementById("BKimage").height = 830;
     } else if (numCheckbox === 2) {
         document.getElementById("heightBox").style.height = 800;
-        document.getElementById("BKimage").height = 900;
+        document.getElementById("BKimage").height = 910;
     } else if (numCheckbox === 3) {
         document.getElementById("heightBox").style.height = 900;
-        document.getElementById("BKimage").height = 950;
+        document.getElementById("BKimage").height = 970;
     }
 }
 
@@ -134,7 +134,7 @@ function toggleRadioGroup() {
     if (checkbox2.checked) {
         radioGroup2.style.display = 'block';
         document.getElementById("heightBox").style.height= 800;
-        document.getElementById("BKimage").height= 900;
+        document.getElementById("BKimage").height= 910;
     } else {
         radioGroup2.style.display = 'none';
     }
@@ -143,7 +143,7 @@ function toggleRadioGroup() {
     if (checkbox3.checked) {
         radioGroup3.style.display = 'block';
         document.getElementById("heightBox").style.height= 900;
-        document.getElementById("BKimage").height= 950;
+        document.getElementById("BKimage").height= 960;
     } else {
         radioGroup3.style.display = 'none';
     }
